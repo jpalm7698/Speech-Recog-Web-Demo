@@ -42,9 +42,9 @@ def process_voice_command():
             text_result = response.lower()
 
         
-        print('Audio successfully processed. Rendering template to user.')
+        print(f'Audio successfully processed.\nSpeech-to-Text Result is: {text_result}\nRendering template to user.')
 
-        # main.js will not render template to user. Maybe a html form tag ("<form>") should be used instead of fetch api?
+        # main.js will not render template to user. Maybe a html form tag ("<form>") should be used instead of fetch api to deliver wav file?
         return render_template('result_recording.html', text_result=text_result)
 
 @app.route('/result-recording/', methods=['GET'])
